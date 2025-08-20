@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Cuestionario Interactivo</title>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'></script>
+<style>
+body { font-family: Arial, sans-serif; padding: 10px; background-color: #f0f0f0; }
+.question { background-color: #fff; margin: 10px 0; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+button { padding: 10px; font-size: 16px; margin-top: 10px; width: 100%; }
+input[type="text"] { width: 100%; padding: 10px; margin-bottom: 20px; font-size: 16px; }
+</style>
+</head>
+<body>
+<h2>Cuestionario Diagnóstico de Motores</h2>
+<form id='quizForm'>
+<label for='studentName'>Nombre del estudiante:</label>
+<input type='text' id='studentName' name='studentName' placeholder='Escribe tu nombre aquí' required>
+<div class='question'><h4>1. ¿Qué instrumento es más adecuado para medir la carrera del pistón en un motor?</h4><label><input type='radio' name='q1' value='A'> A) Calibrador Vernier</label><br><label><input type='radio' name='q1' value='B'> B) Micrómetro</label><br><label><input type='radio' name='q1' value='C'> C) Cinta métrica</label><br><label><input type='radio' name='q1' value='D'> D) Manómetro</label><br></div><div class='question'><h4>2. ¿Cuál es la fórmula más adecuada para calcular el área de contacto entre la culata y el bloque si la superficie es circular?</h4><label><input type='radio' name='q2' value='A'> A) A = l × w</label><br><label><input type='radio' name='q2' value='B'> B) A = π × r²</label><br><label><input type='radio' name='q2' value='C'> C) A = 2πr</label><br><label><input type='radio' name='q2' value='D'> D) A = ½ × b × h</label><br></div><div class='question'><h4>3. Si se mide el volumen de la cámara de combustión con líquido calibrado, ¿qué unidad se debe usar para registrar el resultado?</h4><label><input type='radio' name='q3' value='A'> A) Milímetros</label><br><label><input type='radio' name='q3' value='B'> B) Centímetros cuadrados</label><br><label><input type='radio' name='q3' value='C'> C) Centímetros cúbicos</label><br><label><input type='radio' name='q3' value='D'> D) Litros por segundo</label><br></div><div class='question'><h4>4. Un cilindro presenta una diferencia de 0.12 mm entre el diámetro superior e inferior. ¿Qué indica esto?</h4><label><input type='radio' name='q4' value='A'> A) Que el cilindro está nuevo</label><br><label><input type='radio' name='q4' value='B'> B) Que hay desgaste uniforme</label><br><label><input type='radio' name='q4' value='C'> C) Que hay desgaste cónico</label><br><label><input type='radio' name='q4' value='D'> D) Que el pistón está dañado</label><br></div><div class='question'><h4>5. ¿Qué fórmula se usa para calcular el volumen de aceite en un cárter rectangular?</h4><label><input type='radio' name='q5' value='A'> A) V = l + w + h</label><br><label><input type='radio' name='q5' value='B'> B) V = l × w × h</label><br><label><input type='radio' name='q5' value='C'> C) V = πr²h</label><br><label><input type='radio' name='q5' value='D'> D) V = ½ × b × h</label><br></div><div class='question'><h4>6. ¿Por qué es importante medir el área de contacto entre la válvula y su asiento?</h4><label><input type='radio' name='q6' value='A'> A) Para calcular la potencia del motor</label><br><label><input type='radio' name='q6' value='B'> B) Para verificar el torque de apriete</label><br><label><input type='radio' name='q6' value='C'> C) Para asegurar un buen sellado y compresión</label><br><label><input type='radio' name='q6' value='D'> D) Para medir la temperatura de combustión</label><br></div><div class='question'><h4>7. ¿Qué sucede si la longitud de la biela está fuera de especificación?</h4><label><input type='radio' name='q7' value='A'> A) Aumenta la presión del aceite</label><br><label><input type='radio' name='q7' value='B'> B) Se reduce el volumen de la cámara</label><br><label><input type='radio' name='q7' value='C'> C) Se altera el tiempo de apertura de válvulas</label><br><label><input type='radio' name='q7' value='D'> D) Se modifica la carrera del pistón</label><br></div><div class='question'><h4>8. ¿Qué parámetro se puede calcular a partir del área del pistón?</h4><label><input type='radio' name='q8' value='A'> A) El torque del cigüeñal</label><br><label><input type='radio' name='q8' value='B'> B) La presión de combustión</label><br><label><input type='radio' name='q8' value='C'> C) La velocidad del motor</label><br><label><input type='radio' name='q8' value='D'> D) El consumo de aceite</label><br></div><div class='question'><h4>9. ¿Qué magnitudes se necesitan para calcular el volumen desplazado por el pistón?</h4><label><input type='radio' name='q9' value='A'> A) Diámetro del cigüeñal y número de válvulas</label><br><label><input type='radio' name='q9' value='B'> B) Diámetro del cilindro y carrera del pistón</label><br><label><input type='radio' name='q9' value='C'> C) Longitud de la biela y tipo de aceite</label><br><label><input type='radio' name='q9' value='D'> D) Área de la culata y presión de combustión</label><br></div><div class='question'><h4>10. Si el volumen medido en la cámara de combustión es mayor al especificado, ¿qué puede indicar?</h4><label><input type='radio' name='q10' value='A'> A) Que el motor tiene mayor potencia</label><br><label><input type='radio' name='q10' value='B'> B) Que hay acumulación de carbonilla</label><br><label><input type='radio' name='q10' value='C'> C) Que hay desgaste en el pistón o culata</label><br><label><input type='radio' name='q10' value='D'> D) Que el sistema de refrigeración está fallando</label><br></div>
+<button type='button' onclick='verResultado()'>Ver resultado</button>
+<button type='button' onclick='generarPDF()'>Generar PDF</button>
+<button type='button' onclick='compartirWhatsApp()'>Compartir por WhatsApp</button>
+</form>
+<p id='resultado'></p>
+<script>
+function verResultado() {
+    let correctas = 0;
+    const respuestas = {
+        q1: 'A',
+        q2: 'B',
+        q3: 'C',
+        q4: 'C',
+        q5: 'B',
+        q6: 'C',
+        q7: 'D',
+        q8: 'B',
+        q9: 'B',
+        q10: 'C',
+
+    };
+    for (let q in respuestas) {
+        let seleccionada = document.querySelector(`input[name="${q}"]:checked`);
+        if (seleccionada && seleccionada.value === respuestas[q]) {
+            correctas++;
+        }
+    }
+    let nombre = document.getElementById('studentName').value;
+    document.getElementById('resultado').innerText = `${nombre}, tus respuestas correctas: ${correctas} de 10.`;
+}
+
+async function generarPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    let nombre = document.getElementById('studentName').value;
+    let contenido = `Cuestionario Diagnóstico de Motores
+
+Estudiante: ${nombre}
+
+`;
+    for (let i = 1; i <= 10; i++) {
+        let pregunta = document.querySelector(`input[name='q${i}']:checked`);
+        let respuesta = pregunta ? pregunta.value : 'Sin respuesta';
+        contenido += `Pregunta ${i}: Respuesta seleccionada: ${respuesta}
+`;
+    }
+    let correctas = 0;
+    const respuestas = {
+        q1: 'A',
+        q2: 'B',
+        q3: 'C',
+        q4: 'C',
+        q5: 'B',
+        q6: 'C',
+        q7: 'D',
+        q8: 'B',
+        q9: 'B',
+        q10: 'C',
+
+    };
+    for (let q in respuestas) {
+        let seleccionada = document.querySelector(`input[name="${q}"]:checked`);
+        if (seleccionada && seleccionada.value === respuestas[q]) {
+            correctas++;
+        }
+    }
+    contenido += `
+Resultado final: ${correctas} respuestas correctas de 10.`;
+    doc.text(contenido, 10, 10);
+    doc.save(`resultado_${nombre.replace(/\s+/g, '_')}.pdf`);
+}
+
+function compartirWhatsApp() {
+    let nombre = document.getElementById('studentName').value.trim().replace(/\s+/g, '_');
+    let mensaje = `Hola, aquí está tu resultado del cuestionario: resultado_${nombre}.pdf`;
+    let url = `https://wa.me/?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+}
+</script>
+</body>
+</html>
